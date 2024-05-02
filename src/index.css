@@ -10,7 +10,9 @@ header {
 }
 
 
+
 .search-bar {
+
   width: 100%; 
 }
 
@@ -31,3 +33,20 @@ header {
     width: 800px;
   }
 }
+
+/* Footer starts here */
+
+
+footer .container ul li:not(:first-child) {
+  border-left: 1px solid #ccc; /* Adjust color and thickness as needed */
+  padding-left: 10px
+}
+footer .container ul li:first-child {
+  margin-left: 0;
+}
+
+footer .container ul li a {
+  color: black; 
+}
+
+/* footer END */
