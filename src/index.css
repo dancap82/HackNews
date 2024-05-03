@@ -36,17 +36,21 @@ header {
 
 /* Footer starts here */
 
+footer {
+  border-top: 3px solid;
+  margin-top: 20px;
+  border-color: rgb(9, 54, 255);
+
+}
 
 footer .container ul li:not(:first-child) {
-  border-left: 1px solid #ccc; /* Adjust color and thickness as needed */
-  padding-left: 10px
-}
-footer .container ul li:first-child {
-  margin-left: 0;
+  border-left: 1px solid #ccc; 
 }
 
 footer .container ul li a {
   color: black; 
+  font-size: 14px;
+  padding-left: 10px;
 }
 
 /* footer END */
