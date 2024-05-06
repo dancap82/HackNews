@@ -1,39 +1,18 @@
+
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.css'
 import { useEffect, useState } from 'react'
 import Header from './components/Header.jsx'
-<<<<<<< HEAD
-import Results from './components/Results.jsx'
-=======
 import OneResult from './components/OneResult.jsx'
 import Footer from './components/Footer.jsx'
-import { useState, useEffect } from 'react'
-
->>>>>>> dev
-
 
 function App() {
   const [results, setResults] = useState([]);
+  const [query, setQuery] = useState('');
 
-<<<<<<< HEAD
   useEffect(() => {
-    const fetchResults = async () => {
-      try {
-        const response = await fetch('https://hn.algolia.com/api/v1/search?query=React');
-        const data = await response.json();
-        setResults(data.hits);
-      } catch (error) {
-        console.error('Error fetching users:', error);
-      }
-    };
-
-    fetchResults();
-  }, []); // Empty dependency array ensures the effect runs only once
-=======
-    useEffect(() => {
-        fetchData();
-      }, []
-    );
+    fetchData();
+  }, [query]);
 
   const fetchData = async () => {
     try {
@@ -41,32 +20,25 @@ function App() {
       const data = await response.json();
       setResults(data.hits);
     } catch (error) {
-        console.error('Error fetching data:', error);
-      }
+      console.error('Error fetching data:', error);
+    }
   };
 
->>>>>>> dev
+  const handleChange = (searchQuery) => {
+    setQuery(searchQuery);
+  };
 
   return (
     <div>
-      <Header />
-<<<<<<< HEAD
-      <Results results={results}/>
-=======
+      <Header onSearchChange={handleChange} />
       <OneResult results={results} />
       <Footer />
->>>>>>> dev
     </div>
-    
-  )
+  );
 }
 
-<<<<<<< HEAD
-export default App
-=======
-export default App
+export default App;
 
 
 
 
->>>>>>> dev
