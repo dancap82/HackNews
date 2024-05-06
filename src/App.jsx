@@ -5,15 +5,15 @@ import OneResult from './components/OneResult.jsx'
 import Footer from './components/Footer.jsx'
 import { useState, useEffect } from 'react'
 
-
-
 function App() {
   const [results, setResults] = useState([]);
+  const [query, setQuery] = useState('');
 
-    useEffect(() => {
-        fetchData();
-      }, []
-    );
+  useEffect(() => {
+    if (query !== '') {
+      fetchData();
+    }
+  }, [query]);
 
   const fetchData = async () => {
     try {
@@ -21,23 +21,21 @@ function App() {
       const data = await response.json();
       setResults(data.hits);
     } catch (error) {
-        console.error('Error fetching data:', error);
-      }
+      console.error('Error fetching data:', error);
+    }
   };
 
+  const handleSearch = (searchQuery) => {
+    setQuery(searchQuery);
+  };
 
   return (
     <div>
-      <Header />
+      <Header handleSearch={handleSearch} />
       <OneResult results={results} />
       <Footer />
     </div>
-    
   )
 }
 
-export default App
-
-
-
-
+export default App;
