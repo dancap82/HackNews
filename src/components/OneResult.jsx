@@ -1,12 +1,19 @@
-function OneResult({ title, link }) {
+function OneResult({ results }) {
     return (
-      <li className="list-group-item">
-        <div>
-          <span>{title}</span>
-          <a href={link} target="_blank" rel="noopener noreferrer" className="ml-2">{link}</a>
-        </div>
-      </li>
+      <div className="container mx-6 my-4">
+        <ul>
+          {results.map ((result) =>(
+            <li key={result.objectID}>
+              <span>{result.title} - </span>
+              <a href={result.url} target="_blank" rel="noopener noreferrer" className="ml-2">{result.url}</a>
+           </li>
+          ))}
+        </ul>
+      </div>
+      
     );
   }
 
 export default OneResult;
+
+
