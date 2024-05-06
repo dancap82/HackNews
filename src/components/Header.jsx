@@ -1,5 +1,5 @@
 
-function Header({ query, setQuery, handleSearch }) {
+function Header() {
   return (
     <header className="navbar navbar-expand-lg">
       <div className="container">
@@ -9,13 +9,13 @@ function Header({ query, setQuery, handleSearch }) {
             <input
               className="form-control mr-sm-2 px-5" 
               type="text"
-              value={query}
-              onChange={(e) => setQuery (e.target.value)}
+              value=''
+              onChange=''
               placeholder="Search stories by title, url or author"
             />
           </div>
         <div className="input-group-append">
-              <button className="mx-1 btn btn-outline-success text-white" onClick={handleSearch}>
+              <button className="mx-1 btn btn-outline-success text-white" onClick=''>
                 <i className="fas fa-search"></i>
               </button>
           </div>

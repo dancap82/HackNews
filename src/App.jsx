@@ -8,12 +8,11 @@ import { useState, useEffect } from 'react'
 
 
 function App() {
-  const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
 
     useEffect(() => {
         fetchData();
-      }, [query]
+      }, []
     );
 
   const fetchData = async () => {
@@ -26,15 +25,10 @@ function App() {
       }
   };
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    fetchData();
-  };
-
 
   return (
     <div>
-      <Header query={query} setQuery={setQuery} handleSearch={handleSearch} />
+      <Header />
       <OneResult results={results} />
       <Footer />
     </div>
